@@ -1,0 +1,8 @@
+streamlit
+pandas
+langchain-core
+langchain-community
+langchain
+langchain-upstage
+python-dotenv
+time
