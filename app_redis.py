@@ -49,7 +49,7 @@ load_dotenv()
 REDISPW = os.getenv("REDISPW")
 GCP_ENGINE_IP = os.getenv("GCP_ENGINE_IP")
 # REDIS_URL = "redis://default:jon123@localhost:6379/0"
-REDIS_URL = f"redis://:{REDISPW}@{GCP_ENGINE_IP}/0"
+REDIS_URL = f"redis://:{REDISPW}@{GCP_ENGINE_IP}:6379/0"
 
 # LANGCHAIN_TRACING_V2 환경 변수를 "true"로 설정합니다.
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
