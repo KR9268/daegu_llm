@@ -46,8 +46,10 @@ load_dotenv()
 
 
 # Redis 서버의 URL을 지정합니다.
-
-REDIS_URL = "redis://default:jon123@localhost:6379/0"
+REDISPW = os.getenv("REDISPW")
+GCP_ENGINE_IP = os.getenv("GCP_ENGINE_IP")
+# REDIS_URL = "redis://default:jon123@localhost:6379/0"
+REDIS_URL = f"redis://:{REDISPW}@{GCP_ENGINE_IP}/0"
 
 # LANGCHAIN_TRACING_V2 환경 변수를 "true"로 설정합니다.
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
@@ -144,7 +146,7 @@ if user_input:= st.chat_input("텍스트를 입력하세요."):
         import redis
 
 
-# 내역확인코드
+# 내역확인코드 샘플
 # history = RedisChatMessageHistory("ssac0828",url="redis://default:jon123@localhost:6379/0")
 
 # print(history.messages)
